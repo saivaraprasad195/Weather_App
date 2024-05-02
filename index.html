@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Assets/cloudy.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+        Weather App <img src="Assets/weather-app.png" alt="" id="water-logo" />
+      </h1>
+      <div id="search-container">
+        <input
+          type="text"
+          name="location"
+          id="locationInput"
+          placeholder="Search any Location..."
+        />
+        <button id="search-btn">
+          <img id="searchImg" src="Assets/search.png" alt="search" />
+        </button>
+      </div>
+    </div>
+        <div id="weather-display">
+            <p id="city">Delhi</p>
+            <p id="temp">38°C</p>
+            <div id="details">
+                <span id="time">Time: </span>
+                <span id="wind">Wind : </span>
+                <span id="humidity">Humidity : </span>
+                <span id="pressure">Pressure : </span>
+            </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
