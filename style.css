@@ -8,18 +8,22 @@ body{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-attachment: fixed;
     font-family: Poppins, sans-serif;
 }
 
 #header{
-    padding: 0px 10px 20px 10px;
+    padding: 25px;
     min-width: 400px;
-    max-width: 500px;
-    width: 60%;
+    max-width: 600px;
+    width: 65%;
     background-color: white;
     border-radius: 20px;
-    margin: 30px auto;
+    margin: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +59,7 @@ h1{
 
 button{
     background: #71a6f5;
-    padding: 5px 20px;
+    padding: 10px 25px;
     border-radius: 25px;
     color:#fff;
     font-size: 16px;
@@ -67,9 +71,8 @@ button{
 
 #weather-display{
     font-weight: 600;
-    width: 50%;
-    min-width: 450px;
-    height: 400px;
+    width: 60%;
+    min-width: 400px;
     margin: 15px auto;
     border-radius: 25px; 
     background-color: #f588e5;
@@ -89,7 +92,7 @@ p{
 
 #city{
     margin: 5px 0px 10px;
-    font-size: 34px;
+    font-size: 45px;
     color: white;
     font-weight: 500;
     letter-spacing: 0.9px;
@@ -100,6 +103,7 @@ p{
 }
 
 #details{
+    width: 100%;
     margin-top: 20px;
     font-size: 20px;
     display: grid;
@@ -120,5 +124,23 @@ p{
    border-radius: 20px;
 }
 
+@media only screen and (max-width: 550px){
+
+    #header{
+        padding: 30px 10px;
+        width: 80%;
+    }
+
+    #time, #wind, #humidity, #pressure{
+        font-size: 16px;
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 820px){
+    #weather-display{
+        width: 80%;
+    }
+}
 
 /* Node JS: Libuv library,Q system */

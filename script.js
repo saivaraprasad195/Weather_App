@@ -22,35 +22,26 @@ function fillWeatherDetails(data){
     wind.textContent = `Wind : ${(data.wind.speed * 3.6).toFixed(2)} km/h`;
     humidity.textContent = `Humidity : ${data.main.humidity} %`;
     pressure.textContent = `Pressure : ${data.main.pressure / 100} Pa`
+
+    document.getElementById("locationInput").value="";
 }
 
 async function getWeather(lat,long){
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${APIKEY}`
-    // await fetch(url)
-    //       .then(response => response.json())
-    //       .then(data => {
-            // localStorage.setItem("weatherdata", JSON.stringify(data));
-    //       });
-    // console.log(JSON.parse(localStorage.getItem("weatherdata")));
-
-    fillWeatherDetails(JSON.parse(localStorage.getItem("weatherdata")));
-    
+    await fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            fillWeatherDetails(data);
+            console.log(data);
+          });
 }
 
-
-
 async function getLatLong(city){
-    // let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKEY}`;
-    // const response = await fetch(url);
-    // const data = await response.json();
-    // lat = data["0"].lat;
-    // long = data["0"].lon;
-
-    ////
-    lat = 16.5088;
-    long = 80.6185;
-    /////
-
+    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    lat = data["0"].lat;
+    long = data["0"].lon;
     getWeather(lat,long);
 }
 
