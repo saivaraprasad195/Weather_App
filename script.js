@@ -37,7 +37,7 @@ async function getWeather(lat,long){
 }
 
 async function getLatLong(city){
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKEY}`;
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKEY}`;
     const response = await fetch(url);
     const data = await response.json();
     lat = data["0"].lat;
