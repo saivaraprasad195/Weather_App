@@ -127,8 +127,7 @@ p{
 @media only screen and (max-width: 550px){
 
     #header{
-        padding: 30px 10px;
-        width: 80%;
+        margin: auto;
     }
 
     #time, #wind, #humidity, #pressure{
